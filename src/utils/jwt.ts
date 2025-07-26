@@ -1,11 +1,11 @@
 import jwt from 'jsonwebtoken';
-import { JWT_CONFIG } from '../config/jwt';
-import { JWTPayload } from '../models/JWT';
 
-export const generateToken = (payload: Omit<JWTPayload, 'iat' | 'exp'>): string => {
-    return jwt.sign(payload, JWT_CONFIG.secret!, { expiresIn: '15m' });
+const SECRET = process.env.JWT_SECRET || 'minha-chave-secreta';
+
+export const generateToken = (user: { userId: number; email: string; role: 'admin' | 'user' }): string => {
+    return jwt.sign(user, SECRET, { expiresIn: '15m' });
 };
 
-export const verifyToken = (token: string): JWTPayload => {
-    return jwt.verify(token, JWT_CONFIG.secret!) as JWTPayload;
+export const verifyToken = (token: string): any => {
+    return jwt.verify(token, SECRET);
 };
