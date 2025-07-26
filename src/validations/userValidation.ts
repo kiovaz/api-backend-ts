@@ -55,15 +55,7 @@ export const updateUserSchema = z.object({
         .optional()
 });
 
-// Validação de parâmetros de rota (ID)
-export const userParamsSchema = z.object({
-    id: z.string()
-        .regex(/^\d+$/, 'ID deve ser um número válido')
-        .transform(val => parseInt(val, 10))
-});
-
 // Tipos extraídos dos schemas Zod
 export type CreateUserInput = z.infer<typeof createUserSchema>;
 export type LoginInput = z.infer<typeof loginSchema>;
 export type UpdateUserInput = z.infer<typeof updateUserSchema>;
-export type UserParams = z.infer<typeof userParamsSchema>;
