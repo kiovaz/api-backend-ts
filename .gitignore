@@ -3,7 +3,6 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
 
 # Runtime data
 pids
@@ -35,82 +34,62 @@ jspm_packages/
 
 # dotenv environment variables file
 .env
-.env.*
-!.env.example
 .env.test
-.env.local
 .env.production
+.env.local
 
-# Build output
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Build outputs
 dist/
 build/
-lib/
+out/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# OS
-.DS_Store
-Thumbs.db
+*~
 
 # Logs
 logs
 *.log
-
-# TypeScript
-*.tsbuildinfo
-*.tgz
-
-# Prisma específico
-prisma/migrations/
-/src/generated/prisma
-
-# Adições recomendadas para seu projeto:
-
-# Package manager files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
-# Temporary folders
-tmp/
-temp/
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
-# Docker
-.dockerignore
-docker-compose.override.yml
-
-# Testing
-jest.config.js
-coverage/
-
-# ESLint
-.eslintcache
-
-# Cache directories
-.cache/
-.parcel-cache/
-.next/
-.nuxt/
-.vuepress/dist
-
-# Serverless
-.serverless/
-
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
-
-# yarn v2
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
