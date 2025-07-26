@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 # Runtime data
 pids
@@ -32,24 +33,69 @@ jspm_packages/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# Environment variables
 .env
+.env.*
+!.env.example
 .env.test
 .env.production
 .env.local
 
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-.parcel-cache
+# Build outputs
+dist/
+build/
+out/
+lib/
 
-# next.js build output
-.next
+# TypeScript
+*.tsbuildinfo
+*.d.ts.map
 
-# nuxt.js build output
-.nuxt
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+database.sqlite
 
-# vuepress build output
+# Cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
 .vuepress/dist
+
+# Testing
+jest.config.js
+coverage/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Temporary folders
+tmp/
+temp/
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # Serverless directories
 .serverless/
@@ -65,31 +111,3 @@ jspm_packages/
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
-
-# Build outputs
-dist/
-build/
-out/
-
-# TypeScript cache
-*.tsbuildinfo
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Logs
-logs
-*.log
