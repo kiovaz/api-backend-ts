@@ -37,10 +37,3 @@ export interface AuthResponse {
     user: UserResponse;
     weather?: any;
 }
-
-export interface CreateAdminRequest {
-    name: string;
-    email: string;
-    password: string;
-    cep: string;
-}

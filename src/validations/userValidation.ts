@@ -24,7 +24,7 @@ export const createUserSchema = z.object({
         .transform(val => val.replace(/\D/g, ''))
 });
 
-// ✅ ADICIONAR - Validação para login (estava faltando)
+// Validação para login
 export const loginSchema = z.object({
     email: z.string()
         .email({ message: 'E-mail inválido' })
@@ -33,11 +33,6 @@ export const loginSchema = z.object({
 
     password: z.string()
         .min(1, 'Senha é obrigatória')
-});
-
-// Schema separado para admin promover usuários
-export const promoteUserSchema = z.object({
-    role: z.enum(['admin', 'user'])
 });
 
 // Validação para atualização de usuário (SEM role)
@@ -60,7 +55,7 @@ export const updateUserSchema = z.object({
         .optional()
 });
 
-// Validação de parâmetros de rota (ID) - usado para GET, PUT e DELETE
+// Validação de parâmetros de rota (ID)
 export const userParamsSchema = z.object({
     id: z.string()
         .regex(/^\d+$/, 'ID deve ser um número válido')
@@ -72,4 +67,3 @@ export type CreateUserInput = z.infer<typeof createUserSchema>;
 export type LoginInput = z.infer<typeof loginSchema>;
 export type UpdateUserInput = z.infer<typeof updateUserSchema>;
 export type UserParams = z.infer<typeof userParamsSchema>;
-export type PromoteUserInput = z.infer<typeof promoteUserSchema>;
