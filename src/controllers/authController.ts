@@ -51,22 +51,39 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     try {
         const { email, password }: LoginInput = req.body;
 
-        // Buscar usuário
-        const user = db.prepare(`SELECT id, name, email, password, cep, role, created_at FROM users WHERE email = ?`).get(email) as any;
+        const user = db.prepare(`
+            SELECT id, name, email, password, cep, address, weather, weather_updated_at, role, created_at 
+            FROM users WHERE email = ?
+        `).get(email) as any;
 
         if (!user) {
             res.status(401).json({ error: 'Credenciais inválidas' });
             return;
         }
 
-        // Verificar senha
         const isValidPassword = await comparePassword(password, user.password);
         if (!isValidPassword) {
             res.status(401).json({ error: 'Credenciais inválidas' });
             return;
         }
 
-        // Gerar token com role correto
+        // ✅ CACHE INTELIGENTE - Atualizar clima se passou 1 hora
+        let currentWeather = user.weather;
+        const lastUpdate = user.weather_updated_at ? new Date(user.weather_updated_at) : null;
+        const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000); // 1 hora atrás
+
+        // Se nunca atualizou OU passou 1 hora → buscar clima novo
+        if (!lastUpdate || lastUpdate < oneHourAgo) {
+            const weatherData = await getWeatherByCep(user.cep);
+            if (weatherData) {
+                db.prepare(`
+                    UPDATE users SET weather = ?, weather_updated_at = ? WHERE id = ?
+                `).run(JSON.stringify(weatherData), new Date().toISOString(), user.id);
+                
+                currentWeather = JSON.stringify(weatherData);
+            }
+        }
+
         const token = generateToken({
             userId: user.id,
             email: user.email,
@@ -81,6 +98,8 @@ export const login = async (req: Request, res: Response): Promise<void> => {
                 name: user.name,
                 email: user.email,
                 cep: user.cep,
+                address: user.address,
+                weather: currentWeather ? JSON.parse(currentWeather) : null,
                 role: user.role,
                 created_at: user.created_at
             }
