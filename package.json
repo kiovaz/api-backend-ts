@@ -16,6 +16,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "setup": "npm install && npm run create-admin",
+    "create-admin": "ts-node create-admin.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

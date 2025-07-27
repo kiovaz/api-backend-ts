@@ -3,6 +3,8 @@ import db from '../config/database';
 import { generateToken } from '../utils/jwt';
 import { hashPassword, comparePassword } from '../utils/password';
 import { CreateUserInput, LoginInput } from '../validations/userValidation';
+import { getAddressByCep } from '../services/viaCep';
+import { getWeatherByCep } from '../services/openWeather';
 
 export const register = async (req: Request, res: Response): Promise<void> => {
     try {

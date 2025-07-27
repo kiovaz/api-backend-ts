@@ -6,6 +6,7 @@ export interface User {
     cep: string;
     address?: string;
     weather?: string;
+    weather_updated_at?: number; // timestamp para cache
     role: 'admin' | 'user';
     created_at: string;
 }
