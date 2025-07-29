@@ -16,30 +16,25 @@
 
 </div>
 
-## 🌍 **About the Project**
+## 🌍 About the Project
 
-<div align="center">
+**WeatherUser API** is a RESTful API that combines user management with real-time weather data. Register, authenticate, and get weather information based on user location—fully automated and type-safe.
 
+---
 
-</div>
-
-**WeatherUser API** is a RESTful API that combines user management with weather data. It allows registration, authentication, and querying of weather information based on the user's location.
-
-<div align="center">
-
-### 🎯 **Features**
+## 🎯 Features
 
 <table>
 <tr>
 <td align="center" width="20%">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Americas.png" width="80"/>
   <br><b>Smart Location</b>
-  <br><sub>CEP → Automatic address via ViaCEP</sub>
+  <br><sub>CEP → Auto address via ViaCEP</sub>
 </td>
 <td align="center" width="20%">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Sun%20Behind%20Cloud.png" width="80"/>
   <br><b>Real-Time Weather</b>
-  <br><sub>Integrated OpenWeather API</sub>
+  <br><sub>OpenWeather API integration</sub>
 </td>
 <td align="center" width="20%">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shield.png" width="80"/>
@@ -59,34 +54,34 @@
 </tr>
 </table>
 
-</div>
+---
 
-### ✨ **Highlights**
+## ✨ Highlights
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-#### 🎯 **Core**
+#### Core
 
-- 🔐 **JWT Authentication** with refresh tokens
-- 👤 **Complete and robust User Management**
-- 🌍 **Auto Address Resolution** via Brazilian CEP
-- 🌤️ **Personalized Real-time Weather Data**
-- ✅ **Zod Validation** at all layers
-- 🛡️ **Multi-layer Security Middleware**
+- 🔐 JWT Authentication with refresh tokens
+- 👤 Robust User Management
+- 🌍 Auto Address Resolution (ViaCEP)
+- 🌤️ Personalized Real-time Weather Data
+- ✅ Zod Validation at all layers
+- 🛡️ Multi-layer Security Middleware
 
 </td>
 <td width="50%" valign="top">
 
-#### ⚡ **Engineering**
+#### Engineering
 
-- 🚀 **SQLite3** with optimized queries
-- 📊 **Intelligent and contextual Error Handling**
-- 🔄 **Retry Logic** for external APIs
-- 💾 **Reliable Data Persistence**
-- 🎨 **Clean Architecture** SOLID principles
-- 📝 **TypeScript** for maximum reliability
+- 🚀 SQLite3 with optimized queries
+- 📊 Contextual Error Handling
+- 🔄 Retry Logic for external APIs
+- 💾 Reliable Data Persistence
+- 🎨 Clean Architecture (SOLID)
+- 📝 TypeScript for maximum reliability
 
 </td>
 </tr>
@@ -94,11 +89,7 @@
 
 ---
 
-## ⚡ **Installation**
-
-<div align="center">
-
-</div>
+## ⚡ Installation
 
 ```bash
 # 🌟 Clone the repository
@@ -117,17 +108,17 @@ npm run dev
 
 <div align="center">
 
-### 🎉 **Ready! API running at `http://localhost:3000`**
+### 🎉 Ready! API running at `http://localhost:3000`
 
 </div>
 
 ---
 
-## 🏗️ **Architecture**
+## 🏗️ Architecture
 
 <div align="center">
 
-### 🎨 **Design Pattern**
+### 🎨 Design Pattern
 
 ```mermaid
 flowchart TD
@@ -186,134 +177,129 @@ flowchart TD
 
 </div>
 
-### 📂 **Project Structure**
+---
+
+## 📂 Project Structure
 
 ```plaintext
-📦 weatheruser-api/
-```
-📦 weatheruser-api/
-├── 📁 src/
-│   ├── ⚙️ config/           # Database and JWT configuration
-│   │   ├── 🗄️ database.ts
-│   │   └── 🔑 jwt.ts
-│   ├── 🧑‍💻 controllers/    # Endpoint logic
-│   │   ├── 👤 userController.ts
-│   │   └── 🔐 authController.ts
-│   ├── 🛡️ middleware/       # Auth and validation middlewares
-│   │   ├── 🔒 auth.ts
-│   │   └── ✅ validation.ts
-│   ├── 🗂️ models/           # Data models
-│   │   ├── 👤 User.ts
-│   │   └── 🌤️ Weather.ts
-│   ├── 🚏 routes/           # Application routes
-│   │   ├── 🔐 auth.ts
-│   │   └── 👥 users.ts
-│   ├── 🔌 services/         # External integrations (ViaCEP, OpenWeather)
-│   │   ├── 🏤 viacep.ts
-│   │   └── ☁️ openweather.ts
-│   ├── 🛠️ utils/            # Utilities (bcrypt, logger, etc)
-│   │   ├── 🔑 bcrypt.ts
-│   │   └── 📋 logger.ts
-│   ├── 📏 validations/      # Validation schemas (Zod)
-│   │   ├── 👤 userSchemas.ts
-│   │   └── 🔐 authSchemas.ts
-│   └── 🚀 app.ts            # Application entry point
+weatheruser-api/
+├── src/
+│   ├── config/           # Database and JWT configuration
+│   │   ├── database.ts
+│   │   └── jwt.ts
+│   ├── controllers/      # Endpoint logic
+│   │   ├── userController.ts
+│   │   └── authController.ts
+│   ├── middleware/       # Auth and validation middlewares
+│   │   ├── auth.ts
+│   │   └── validation.ts
+│   ├── models/           # Data models
+│   │   ├── User.ts
+│   │   └── Weather.ts
+│   ├── routes/           # Application routes
+│   │   ├── auth.ts
+│   │   └── users.ts
+│   ├── services/         # External integrations (ViaCEP, OpenWeather)
+│   │   ├── viacep.ts
+│   │   └── openweather.ts
+│   ├── utils/            # Utilities (bcrypt, logger, etc)
+│   │   ├── bcrypt.ts
+│   │   └── logger.ts
+│   ├── validations/      # Validation schemas (Zod)
+│   │   ├── userSchemas.ts
+│   │   └── authSchemas.ts
+│   └── app.ts            # Application entry point
 │
-├── 📄 docs/                 # Extra documentation
-└── 📦 package.json          # Project dependencies and scripts
+├── docs/                 # Extra documentation
+├── package.json          # Project dependencies and scripts
+└── .env.example          # Environment variables example
 ```
 
 ---
 
-## 📊 **Tech Stack**
+## 📊 Tech Stack
 
 <div align="center">
 
-### 🎨 **Technologies Used**
+### 🎨 Technologies Used
 
 <table>
-<tr>
-<td align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="60"/><br>
-  <b>TypeScript</b><br>
-  <sub>Main Language</sub>
-</td>
-<td align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="60"/><br>
-  <b>Node.js</b><br>
-  <sub>Runtime Environment</sub>
-</td>
-<td align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="60"/><br>
-  <b>Express.js</b><br>
-  <sub>Web Framework</sub>
-</td>
-<td align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" width="60"/><br>
-  <b>SQLite</b><br>
-  <sub>Database</sub>
-</td>
-</tr>
-<tr>
-<td align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" width="60"/><br>
-  <b>Jest</b><br>
-  <sub>Testing Framework</sub>
-</td>
-<td align="center">
-  <img src="https://jwt.io/img/pic_logo.svg" width="60"/><br>
-  <b>JWT</b><br>
-  <sub>Authentication</sub>
-</td>
-<td align="center">
-  <img src="https://raw.githubusercontent.com/colinhacks/zod/master/logo.svg" width="60"/><br>
-  <b>Zod</b><br>
-  <sub>Schema Validation</sub>
-</td>
-<td align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" width="60"/><br>
-  <b>NPM</b><br>
-  <sub>Package Manager</sub>
-</td>
-</tr>
+  <tr>
+    <td align="center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="60"/><br>
+      <b>TypeScript</b><br>
+      <sub>Main Language</sub>
+    </td>
+    <td align="center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="60"/><br>
+      <b>Node.js</b><br>
+      <sub>Runtime Environment</sub>
+    </td>
+    <td align="center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="60"/><br>
+      <b>Express.js</b><br>
+      <sub>Web Framework</sub>
+    </td>
+    <td align="center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" width="60"/><br>
+      <b>SQLite</b><br>
+      <sub>Database</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" width="60"/><br>
+      <b>Jest</b><br>
+      <sub>Testing Framework</sub>
+    </td>
+    <td align="center">
+      <img src="https://jwt.io/img/pic_logo.svg" width="60"/><br>
+      <b>JWT</b><br>
+      <sub>Authentication</sub>
+    </td>
+    <td align="center">
+      <img src="https://raw.githubusercontent.com/colinhacks/zod/master/logo.svg" width="60"/><br>
+      <b>Zod</b><br>
+      <sub>Schema Validation</sub>
+    </td>
+    <td align="center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" width="60"/><br>
+      <b>NPM</b><br>
+      <sub>Package Manager</sub>
+    </td>
+  </tr>
 </table>
 
-### 🌐 **Integrated External APIs**
+### 🌐 Integrated External APIs
 
 <table>
-<tr>
-<td align="center" width="50%">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cityscape.png" width="80"/><br>
-  <b>ViaCEP</b><br>
-  <sub>Brazilian CEP lookup</sub>
-</td>
-<td align="center" width="50%">
-  <img src="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/icons/logo_60x60.png" width="60"/><br>
-  <b>OpenWeather</b><br>
-  <sub>Global weather data</sub>
-</td>
-</tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cityscape.png" width="80"/><br>
+      <b>ViaCEP</b><br>
+      <sub>Brazilian CEP lookup</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/icons/logo_60x60.png" width="60"/><br>
+      <b>OpenWeather</b><br>
+      <sub>Global weather data</sub>
+    </td>
+  </tr>
 </table>
 
 </div>
 
 ---
 
-## 📡 **Endpoints**
+## 📡 Endpoints
 
-<div align="center">
-
-### 🌐 **Full API Documentation**
-
-</div>
-
-### 🔓 **Public Endpoints**
+### 🔓 Public Endpoints
 
 <table>
 <tr>
 <td width="50%">
 
-#### 📝 **User Registration**
+#### 📝 User Registration
 
 ```http
 POST /auth/register
@@ -350,7 +336,7 @@ Content-Type: application/json
 </td>
 <td width="50%">
 
-#### 🔐 **User Login**
+#### 🔐 User Login
 
 ```http
 POST /auth/login
@@ -392,16 +378,16 @@ Content-Type: application/json
 </tr>
 </table>
 
-### 🔒 **Protected Endpoints** (Requires JWT Token)
+### 🔒 Protected Endpoints (JWT Required)
 
-| Method | Endpoint | Description | Parameters |
-|:------:|:---------|:------------|:-----------|
-| **GET** | `/users` | List all users | `Authorization: Bearer <token>` |
-| **GET** | `/users/:id` | Get specific user | `id` (path parameter) |  
-| **PUT** | `/users/:id` | Update user data | `id` + body with fields to update |
-| **DELETE** | `/users/:id` | Permanently remove user | `id` (path parameter) |
+| Method | Endpoint      | Description           | Parameters                        |
+|:------:|:-------------|:----------------------|:----------------------------------|
+| **GET**    | `/users`      | List all users        | `Authorization: Bearer <token>`   |
+| **GET**    | `/users/:id`  | Get specific user     | `id` (path parameter)             |
+| **PUT**    | `/users/:id`  | Update user data      | `id` + body with fields to update |
+| **DELETE** | `/users/:id`  | Remove user           | `id` (path parameter)             |
 
-#### 🔍 **Example: Get User**
+#### 🔍 Example: Get User
 
 ```http
 GET /users/1
@@ -431,27 +417,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 ---
 
-## 💡 **Examples**
+## ⚙️ Configuration
 
-<div align="center">
-
-
-</div>
-
-<table>
-<tr>
-<td width="50%">
-
-
-
-</td>
-<td width="50%">
-
----
-
-## ⚙️ **Configuration**
-
-### 🌍 **Environment Variables**
+### 🌍 Environment Variables
 
 ```env
 # 🌐 Server Configuration
@@ -467,26 +435,27 @@ OPENWEATHER_API_KEY=your-openweather-api-key
 DATABASE_PATH=./database.sqlite
 ```
 
-### 🛠️ **Available Scripts**
+### 🛠️ Available Scripts
 
 ```bash
 # 🔥 Development
-npm run dev          # Starts server with hot-reload
+npm run dev          # Start server with hot-reload
 
 # 📦 Production  
-npm run build        # Compiles TypeScript to JavaScript
-npm start            # Starts production server
+npm run build        # Compile TypeScript to JavaScript
+npm start            # Start production server
 
 # 🧪 Tests
-npm test             # Runs tests with Jest
+npm test             # Run tests with Jest
 npm run test:watch   # Tests in watch mode
 
 # 💄 Formatting
-npm run format       # Formats code with Prettier
+npm run format       # Format code with Prettier
 ```
 
+---
 
-## **Developer**
+## 👨‍💻 Developer
 
 <div align="center">
 
